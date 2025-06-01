@@ -4,6 +4,7 @@ import ErrorMessage from "@modules/checkout/components/error-message"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
 import Input from "@modules/common/components/input"
 import { useActionState } from "react"
+import { sdk } from "@lib/config"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
@@ -12,12 +13,32 @@ type Props = {
 const Login = ({ setCurrentView }: Props) => {
   const [message, formAction] = useActionState(login, null)
 
+  async function loginWithGoogle() {
+    const callbackUrl = `${
+      window.location.origin
+    }${window.location.pathname.replace(/\/account.*/, "")}/auth/callback`
+    const res = await sdk.auth.login("customer", "google", {
+      callback_url: callbackUrl,
+    })
+    if (typeof res === "object" && res.location) {
+      window.location.href = res.location
+    }
+  }
+
   return (
     <div
       className="max-w-sm w-full flex flex-col items-center"
       data-testid="login-page"
     >
       <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
+      <button
+        onClick={loginWithGoogle}
+        className="w-full mb-4 py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        data-testid="google-login-button"
+        type="button"
+      >
+        Sign in with Google
+      </button>
       <p className="text-center text-base-regular text-ui-fg-base mb-8">
         Sign in to access an enhanced shopping experience.
       </p>
