@@ -1,6 +1,6 @@
-import { Github } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
-import CategorySection from "components/CategorySection"
+import { Github } from "@medusajs/icons";
+import { Button, Heading } from "@medusajs/ui";
+import CategorySection from "@/components/CategorySection";
 
 const categories = [
   {
@@ -19,7 +19,7 @@ const categories = [
     image: "/images/wooden-wonders.png",
     title: "Wooden Wonders",
   },
-]
+];
 const ageCategories = [
   {
     image: "/images/age-2-4.jpg",
@@ -37,7 +37,7 @@ const ageCategories = [
     image: "/images/age-8-plus.jpg",
     title: "8+",
   },
-]
+];
 
 const Hero = () => {
   return (
@@ -55,7 +55,7 @@ const Hero = () => {
         className="bg-white"
       />
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

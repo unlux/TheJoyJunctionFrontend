@@ -1,10 +1,10 @@
-import { Metadata } from "next"
-import ContactForm from "@modules/contactus/components/ContactForm"
+import { Metadata } from "next";
+import ContactForm from "@/modules/contactus/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us - The Joy Junction",
   description: "We're here to help and answer any question you might have.",
-}
+};
 
 export default function ContactUsPage() {
   return (
@@ -21,5 +21,5 @@ export default function ContactUsPage() {
         <ContactForm /> {/* Render the client component here */}
       </div>
     </div>
-  )
+  );
 }

@@ -1,27 +1,27 @@
-import { login } from "@lib/data/customer"
-import { LOGIN_VIEW } from "@modules/account/templates/login-template"
-import ErrorMessage from "@modules/checkout/components/error-message"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
-import Input from "@modules/common/components/input"
-import { useActionState } from "react"
-import { sdk } from "@lib/config"
+import { login } from "@/lib/data/customer";
+import { LOGIN_VIEW } from "@/modules/account/templates/login-template";
+import ErrorMessage from "@/modules/checkout/components/error-message";
+import { SubmitButton } from "@/modules/checkout/components/submit-button";
+import Input from "@/modules/common/components/input";
+import { useActionState } from "react";
+import { sdk } from "@/lib/config";
 
 type Props = {
-  setCurrentView: (view: LOGIN_VIEW) => void
-}
+  setCurrentView: (view: LOGIN_VIEW) => void;
+};
 
 const Login = ({ setCurrentView }: Props) => {
-  const [message, formAction] = useActionState(login, null)
+  const [message, formAction] = useActionState(login, null);
 
   async function loginWithGoogle() {
     const callbackUrl = `${
       window.location.origin
-    }${window.location.pathname.replace(/\/account.*/, "")}/auth/callback`
+    }${window.location.pathname.replace(/\/account.*/, "")}/auth/callback`;
     const res = await sdk.auth.login("customer", "google", {
       callback_url: callbackUrl,
-    })
+    });
     if (typeof res === "object" && res.location) {
-      window.location.href = res.location
+      window.location.href = res.location;
     }
   }
 
@@ -79,7 +79,7 @@ const Login = ({ setCurrentView }: Props) => {
         .
       </span>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

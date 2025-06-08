@@ -1,11 +1,10 @@
-const checkEnvVariables = require("./check-env-variables")
+import type { NextConfig } from "next";
+const checkEnvVariables = require("./check-env-variables");
 
-checkEnvVariables()
+checkEnvVariables();
 
-/**
- * @type {import('next').NextConfig}
- */
-const nextConfig = {
+const nextConfig: NextConfig = {
+  /* config options here */
   reactStrictMode: true,
   logging: {
     fetches: {
@@ -42,6 +41,6 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
-module.exports = nextConfig
+export default nextConfig;
