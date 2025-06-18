@@ -17,7 +17,7 @@ const Login = ({ setCurrentView }: Props) => {
     const callbackUrl = `${
       window.location.origin
     }${window.location.pathname.replace(/\/account.*/, "")}/auth/callback`;
-    const res = await sdk.auth.login("customer", "google", {
+    const res = await sdk.auth.login("customer", "custom-google", {
       callback_url: callbackUrl,
     });
     if (typeof res === "object" && res.location) {
