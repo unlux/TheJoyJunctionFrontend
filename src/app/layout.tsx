@@ -16,16 +16,16 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-mode="light">
-      <body>
+      <body className="flex min-h-screen flex-col">
         <StickyBanner
           className="bg-gradient-to-b from-blue-500 to-blue-600"
           hideOnScroll={true}
         >
-          <p className="text-white items-center justify-center flex w-full">
-            Win a Free gift on orders above rs 1499
+          <p className="text-white items-center justify-center flex w-full text-lg">
+            Win a Free gift on orders above ₹1499
           </p>
         </StickyBanner>
-        <main className="relative">{props.children}</main>
+        <main className="relative flex-1">{props.children}</main>
         <Analytics />
       </body>
     </html>

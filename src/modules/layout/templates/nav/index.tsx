@@ -26,7 +26,7 @@ export default async function Nav() {
               data-testid="nav-store-link"
             >
               <Image src="/logo.png" width={50} height={50} alt="logo" />
-              <span>The Joy Junction</span>
+              <span className="text-2xl ">The Joy Junction</span>
             </LocalizedClientLink>
           </div>
 
