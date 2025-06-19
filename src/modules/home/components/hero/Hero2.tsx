@@ -23,14 +23,14 @@ export default function Hero2() {
   const gridCols = "grid-cols-2 md:grid-cols-4"; // default
   const className = "";
   return (
-    <section className={`px-4 pb-12 text-center `}>
+    <section className={`px-4 pb-12 max-w-8xl text-center mx-auto`}>
       <h2 className="text-5xl md:text-6xl font-bold text-blue-900 mb-10 whitespace-pre-line">
         Shop By Age
       </h2>
       <p className="uppercase text-base tracking-widest text-blue-700 mb-2">
         Categories
       </p>
-      <div className={`grid ${gridCols} gap-6  pt-5 mx-auto`}>
+      <div className={`grid ${gridCols} gap-6 pt-5 mx-auto`}>
         {ageCategories.map((item, i) => (
           <CategoryCard key={i} {...item} />
         ))}

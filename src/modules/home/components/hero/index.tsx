@@ -8,6 +8,8 @@ import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "motion/react";
 import Hero1 from "./Hero1";
 import Hero2 from "./Hero2";
+import Yeti from "./yeti-section";
+import { FirstSlider } from "./first-slider";
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 const Hero = () => {
@@ -31,8 +33,10 @@ const Hero = () => {
           }}
           className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white  leading-relaxed lg:leading-snug text-center mx-auto "
         >
+          <FirstSlider />
           <Hero1 />
           <Hero2 />
+          <Yeti />
           {/* <hr /> */}
           {/* <CategorySection heading="Shop By Age" subheading="JJ Toys & Games" items={ageCategories} /> */}
           {/* <Hero4 /> */}

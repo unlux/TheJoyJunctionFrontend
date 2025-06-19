@@ -12,7 +12,7 @@ export default function CategoryCard({
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer rounded-xl overflow-hidden shadow-md transition-transform hover:scale-105 "
+      className="cursor-pointer rounded-xl overflow-hidden shadow-xl/30 transition-transform hover:scale-105  "
     >
       <img src={image} alt={title} className="w-full h-48 object-cover" />
     </div>
