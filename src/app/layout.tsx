@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-mode="light">
+    <html lang="en" data-mode="light" className={quicksand.className}>
       <body className="flex min-h-screen flex-col">
         <StickyBanner
           className="bg-gradient-to-b from-blue-500 to-blue-600"

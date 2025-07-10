@@ -1,12 +1,12 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - The Joy Junction",
   description: "Read the Privacy Policy for The Joy Junction.",
-}
+};
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "June 8, 2025" // Update this date as needed
+  const lastUpdated = "June 8, 2025"; // Update this date as needed
 
   return (
     <div className="bg-slate-100 min-h-screen py-12 sm:py-16 lg:py-20">
@@ -292,5 +292,5 @@ export default function PrivacyPolicyPage() {
         </article>
       </div>
     </div>
-  )
+  );
 }
